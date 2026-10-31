@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Felipe Santana — Desenvolvedor Full-Stack em formação. Portfólio profissional com projetos em HTML, CSS e JavaScript. Disponível para freelance e oportunidades CLT.">
+  <meta name="keywords" content="Felipe Santana, Full-Stack Developer, Desenvolvedor, Portfólio, HTML, CSS, JavaScript, Web Developer, Freelancer">
+  <meta name="author" content="Felipe Santana">
+  <meta name="theme-color" content="#0b0b0f">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Felipe Santana — Full-Stack Developer">
+  <meta property="og:description" content="Construindo experiências digitais com código limpo, design intuitivo e paixão por tecnologia.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <title>Felipe Santana — Full-Stack Developer</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== SCROLL PROGRESS ==================== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ==================== CUSTOM CURSOR ==================== -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ==================== PARTICLES CANVAS ==================== -->
+  <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+
+  <!-- ==================== SPLASH SCREEN ==================== -->
+  <div id="splash" class="splash" aria-hidden="true">
+    <div class="splash__content">
+      <div class="splash__line-wrapper">
+        <span class="splash__line splash__line--1">Felipe</span>
+      </div>
+      <div class="splash__line-wrapper">
+        <span class="splash__line splash__line--2">Santana</span>
+      </div>
+      <p class="splash__subtitle">Full-Stack Developer</p>
+      <div class="splash__loader">
+        <div class="splash__loader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav__logo" aria-label="Início">
+        <span class="nav__logo-text">FS</span>
+        <span class="nav__logo-dot"></span>
+      </a>
+
+      <div class="nav__menu" id="navMenu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#about" class="nav__link" data-section="about">
+              <span class="nav__link-number">01</span>
+              <span class="nav__link-text">Sobre</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#skills" class="nav__link" data-section="skills">
+              <span class="nav__link-number">02</span>
+              <span class="nav__link-text">Skills</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#projects" class="nav__link" data-section="projects">
+              <span class="nav__link-number">03</span>
+              <span class="nav__link-text">Projetos</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link" data-section="contact">
+              <span class="nav__link-number">04</span>
+              <span class="nav__link-text">Contato</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav__actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" type="button">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="nav__hamburger" id="navToggle" aria-label="Abrir menu" aria-expanded="false" type="button">
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+      <div class="hero__container container">
+        <div class="hero__content">
+          <p class="hero__greeting reveal-up" data-delay="0">Olá, eu sou</p>
+          <h1 class="hero__title">
+            <span class="hero__title-line reveal-up" data-delay="1">Felipe</span>
+            <span class="hero__title-line reveal-up" data-delay="2">Santana<span class="hero__title-accent">.</span></span>
+          </h1>
+          <p class="hero__subtitle reveal-up" data-delay="3">Full-Stack Developer</p>
+          <p class="hero__description reveal-up" data-delay="4">
+            Construindo experiências digitais com código limpo, design intuitivo e paixão por tecnologia.
+          </p>
+          <div class="hero__cta reveal-up" data-delay="5">
+            <a href="#projects" class="btn btn--primary">
+              <span>Ver Projetos</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#contact" class="btn btn--outline">
+              <span>Contato</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal-up" data-delay="3">
+          <div class="hero__code-window">
+            <div class="hero__code-header">
+              <span class="hero__code-dot hero__code-dot--red"></span>
+              <span class="hero__code-dot hero__code-dot--yellow"></span>
+              <span class="hero__code-dot hero__code-dot--green"></span>
+              <span class="hero__code-filename">developer.js</span>
+            </div>
+            <pre class="hero__code-body"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Felipe Santana"</span>,
+  <span class="code-property">age</span>: <span class="code-number">17</span>,
+  <span class="code-property">role</span>: <span class="code-string">"Full-Stack Dev"</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">"HTML"</span>, <span class="code-string">"CSS"</span>, <span class="code-string">"JS"</span>],
+  <span class="code-property">passion</span>: <span class="code-boolean">true</span>,
+  <span class="code-method">createSomething</span>() {
+    <span class="code-keyword">return</span> <span class="code-string">"amazing"</span>;
+  }
+};<span class="code-cursor"></span></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator">
+        <span class="hero__scroll-text">Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__number reveal-up">01</span>
+          <h2 class="section__title reveal-up">Sobre Mim</h2>
+          <div class="section__line reveal-up"></div>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <p class="about__paragraph reveal-up">
+              Tenho <strong>17 anos</strong> e sou movido pela determinação de construir uma carreira sólida como <strong>Desenvolvedor Full-Stack</strong>. Desde que escrevi minha primeira linha de código, descobri uma paixão que me impulsiona a aprender e evoluir constantemente.
+            </p>
+            <p class="about__paragraph reveal-up">
+              Atualmente, possuo conhecimentos intermediários em <strong>HTML5, CSS3 e JavaScript</strong>, e estou em constante evolução — mergulhando em novas tecnologias, frameworks e boas práticas do ecossistema Full-Stack.
+            </p>
+            <p class="about__paragraph reveal-up">
+              Busco oportunidades que me permitam crescer profissionalmente, colaborar com equipes talentosas e transformar ideias em produtos digitais que façam diferença. Meu objetivo é claro: <strong>entregar valor real através do código</strong>.
+            </p>
+          </div>
+
+          <div class="about__details reveal-up">
+            <div class="about__detail-card">
+              <div class="about__detail-item">
+                <span class="about__detail-label">Nome</span>
+                <span class="about__detail-value">Felipe Santana</span>
+              </div>
+              <div class="about__detail-item">
+                <span class="about__detail-label">Idade</span>
+                <span class="about__detail-value">17 anos</span>
+              </div>
+              <div class="about__detail-item">
+                <span class="about__detail-label">Foco</span>
+                <span class="about__detail-value">Full-Stack Development</span>
+              </div>
+              <div class="about__detail-item">
+                <span class="about__detail-label">Idiomas</span>
+                <span class="about__detail-value">Português (nativo), Inglês (básico)</span>
+              </div>
+              <div class="about__detail-item">
+                <span class="about__detail-label">Disponível</span>
+                <span class="about__detail-value about__detail-value--available">Freelance & CLT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__number reveal-up">02</span>
+          <h2 class="section__title reveal-up">Tech Stack</h2>
+          <div class="section__line reveal-up"></div>
+        </div>
+
+        <p class="skills__intro reveal-up">
+          Tecnologias que domino e ferramentas que estou estudando para me tornar um desenvolvedor completo.
+        </p>
+
+        <div class="skills__grid">
+          <!-- HTML -->
+          <div class="skill-card reveal-up" data-delay="0">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 128 128" aria-hidden="true">
+                <path fill="var(--accent)" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"></path>
+                <path fill="var(--accent-secondary)" d="M64 116.8l36.378-10.086 8.559-95.878H64z"></path>
+                <path fill="var(--bg-primary)" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H34.151l1.927 21.609 27.899 7.74.023-.007z"></path>
+                <path fill="var(--text-primary)" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l27.922-7.735.205-2.288 3.198-35.813.333-3.675.662-7.391H63.952v13.762h17.195l.58-6.434z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">HTML5</h3>
+            <span class="skill-card__level skill-card__level--intermediate">Intermediário</span>
+            <p class="skill-card__desc">Semântica, acessibilidade e estruturas modernas.</p>
+          </div>
+
+          <!-- CSS -->
+          <div class="skill-card reveal-up" data-delay="1">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 128 128" aria-hidden="true">
+                <path fill="var(--accent)" d="M19.67 26l8.459 94.674L63.572 128l35.64-7.391L107.69 26z"></path>
+                <path fill="var(--accent-secondary)" d="M64 118.861l28.801-7.983 7.232-80.978H64z"></path>
+                <path fill="var(--bg-primary)" d="M64 66.22H49.828l-.966-10.842H64V43.924H36.013l.254 2.846 2.605 29.198H64zm0 28.737l-.049.013-11.96-3.231-.765-8.564H39.735l1.504 16.858 22.717 6.305.044-.012z"></path>
+                <path fill="var(--text-primary)" d="M64 66.22v11.454H76.45l-1.183 13.236-11.267 3.044v11.845l22.741-6.3.166-1.869 2.607-29.18.271-2.983.505-5.543H64v11.454h14.479l-.484 5.396z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">CSS3</h3>
+            <span class="skill-card__level skill-card__level--intermediate">Intermediário</span>
+            <p class="skill-card__desc">Layouts responsivos, animações e design systems.</p>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="skill-card reveal-up" data-delay="2">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 128 128" aria-hidden="true">
+                <path fill="var(--accent)" d="M2 1h124v124H2z"></path>
+                <path fill="var(--bg-primary)" d="M75.029 100.644c2.637 4.307 6.068 7.476 12.148 7.476 5.104 0 8.362-2.553 8.362-6.073 0-4.221-3.348-5.724-8.962-8.182l-3.078-1.322c-8.889-3.787-14.786-8.533-14.786-18.559 0-9.236 7.035-16.271 18.038-16.271 7.834 0 13.467 2.727 17.521 9.87l-9.594 6.159c-2.112-3.787-4.393-5.273-7.928-5.273-3.609 0-5.896 2.291-5.896 5.273 0 3.693 2.287 5.183 7.576 7.469l3.078 1.322c10.469 4.494 16.366 9.084 16.366 19.393 0 11.109-8.725 17.184-20.436 17.184-11.457 0-18.869-5.461-22.479-12.62zm-33.253 1.474c1.928 3.422 3.686 6.313 7.914 6.313 4.047 0 6.6-1.585 6.6-7.752V59.736h12.23v41.138c0 12.775-7.49 18.584-18.428 18.584-9.876 0-15.591-5.108-18.51-11.264z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">JavaScript ES6+</h3>
+            <span class="skill-card__level skill-card__level--intermediate">Intermediário</span>
+            <p class="skill-card__desc">DOM, APIs, ES Modules e lógica avançada.</p>
+          </div>
+
+          <!-- Git -->
+          <div class="skill-card reveal-up" data-delay="3">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 128 128" aria-hidden="true">
+                <path fill="var(--accent)" d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.001-11.501z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">Git & GitHub</h3>
+            <span class="skill-card__level skill-card__level--learning">Aprendendo</span>
+            <p class="skill-card__desc">Versionamento, branches e colaboração.</p>
+          </div>
+
+          <!-- React -->
+          <div class="skill-card reveal-up" data-delay="4">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 128 128" aria-hidden="true">
+                <g fill="var(--accent)"><circle cx="64" cy="64" r="11.4"></circle><path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z"></path></g>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">React</h3>
+            <span class="skill-card__level skill-card__level--learning">Estudando</span>
+            <p class="skill-card__desc">Componentes, hooks e ecossistema React.</p>
+          </div>
+
+          <!-- Node.js -->
+          <div class="skill-card reveal-up" data-delay="5">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 128 128" aria-hidden="true">
+                <path fill="var(--accent)" d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623c-.712 0-2.306 1.061-2.306 1.774v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 91.2c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.71 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645 1.137 1.272 1.137h5.731c.347 0 .726-.18.96-.467.237-.286.353-.607.314-.976-1.229-10.506-7.549-15.385-22.119-15.385-12.647 0-20.189 5.334-20.189 14.275 0 9.698 7.506 12.378 19.636 13.575 14.514 1.432 15.616 3.56 15.616 6.428 0 4.972-3.989 7.089-13.283 7.089z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">Node.js</h3>
+            <span class="skill-card__level skill-card__level--learning">Estudando</span>
+            <p class="skill-card__desc">Backend, APIs REST e servidor JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__number reveal-up">03</span>
+          <h2 class="section__title reveal-up">Projetos</h2>
+          <div class="section__line reveal-up"></div>
+        </div>
+
+        <p class="projects__intro reveal-up">
+          Uma seleção dos meus projetos mais recentes. Cada um reflete minha evolução como desenvolvedor.
+        </p>
+
+        <div class="projects__grid">
+          <!-- Project 1 -->
+          <article class="project-card reveal-up" data-delay="0">
+            <div class="project-card__image">
+              <div class="project-card__image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="#" class="project-card__link" aria-label="Ver código no GitHub" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </a>
+                  <a href="#" class="project-card__link" aria-label="Ver demonstração ao vivo" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Portfólio Pessoal</h3>
+              <p class="project-card__description">
+                Meu site pessoal — este que você está visitando. Desenvolvido com foco em performance, acessibilidade e design minimalista.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-card__tag">HTML5</span>
+                <span class="project-card__tag">CSS3</span>
+                <span class="project-card__tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal-up" data-delay="1">
+            <div class="project-card__image">
+              <div class="project-card__image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="#" class="project-card__link" aria-label="Ver código no GitHub" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </a>
+                  <a href="#" class="project-card__link" aria-label="Ver demonstração ao vivo" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Landing Page Criativa</h3>
+              <p class="project-card__description">
+                Landing page moderna para um projeto fictício, com animações suaves, layout responsivo e foco em conversão.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-card__tag">HTML5</span>
+                <span class="project-card__tag">CSS3</span>
+                <span class="project-card__tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal-up" data-delay="2">
+            <div class="project-card__image">
+              <div class="project-card__image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="#" class="project-card__link" aria-label="Ver código no GitHub" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </a>
+                  <a href="#" class="project-card__link" aria-label="Ver demonstração ao vivo" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">To-Do App Interativo</h3>
+              <p class="project-card__description">
+                Aplicação de tarefas com CRUD completo, filtros, armazenamento local (localStorage) e interface intuitiva.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-card__tag">HTML5</span>
+                <span class="project-card__tag">CSS3</span>
+                <span class="project-card__tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__number reveal-up">04</span>
+          <h2 class="section__title reveal-up">Contato</h2>
+          <div class="section__line reveal-up"></div>
+        </div>
+
+        <p class="contact__intro reveal-up">
+          Tem um projeto em mente ou quer bater um papo? Estou disponível para oportunidades e colaborações.
+        </p>
+
+        <div class="contact__grid">
+          <form class="contact__form reveal-up" id="contactForm" novalidate>
+            <div class="form__group">
+              <input type="text" id="formName" class="form__input" placeholder=" " required autocomplete="name">
+              <label for="formName" class="form__label">Nome</label>
+              <div class="form__line"></div>
+            </div>
+            <div class="form__group">
+              <input type="email" id="formEmail" class="form__input" placeholder=" " required autocomplete="email">
+              <label for="formEmail" class="form__label">E-mail</label>
+              <div class="form__line"></div>
+            </div>
+            <div class="form__group">
+              <textarea id="formMessage" class="form__input form__input--textarea" placeholder=" " required rows="4"></textarea>
+              <label for="formMessage" class="form__label">Mensagem</label>
+              <div class="form__line"></div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <span>Enviar Mensagem</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+
+          <div class="contact__info reveal-up">
+            <p class="contact__info-text">
+              Ou me encontre nas redes:
+            </p>
+            <div class="contact__socials">
+              <a href="https://github.com/" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:contato@felipesantana.dev" class="contact__social-link" aria-label="E-mail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>E-mail</span>
+              </a>
+            </div>
+
+            <div class="contact__availability">
+              <span class="contact__availability-dot"></span>
+              <span>Disponível para projetos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__text">
+          Projetado e desenvolvido por <strong>Felipe Santana</strong>
+        </p>
+        <p class="footer__year">&copy; 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
